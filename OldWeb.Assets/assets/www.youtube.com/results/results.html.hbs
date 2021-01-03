@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>YouTube - Your Digital Video Repository</title>
+</head>
+<body>
+    <table align="center" width="640">
+        <tr>
+            <td>
+                <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tbody>
+                        <tr valign="top">
+                            <td width="130" rowspan="2"><a href="/site?url=http://www.youtube.com"><img src="/assets/www.youtube.com/img/logo.gif" width="120" height="48" alt="YouTube" border="0"></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table align="center" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 10px;">
+                    <tbody>
+                        <tr>
+                            <form name="f" method="GET" action="/site">
+                                <td width="300"><input size="38" tabindex="1" type="text" value="" name="search_query" maxlength="128"></td>
+                                <td>
+                                    <input type="hidden" name="url" value="https://www.youtube.com/results">
+                                    <input type="submit" name="search_videos" value="Search Videos">
+                                </td>
+                            </form>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table width="100%" align="center" cellpadding="5" cellspacing="0" border="0">
+                    <tbody>
+                        <tr valign="top">
+                            <td>
+                                <table width="100%" align="center" cellpadding="10" cellspacing="0" border="0" bgcolor="#CCCCCC">
+                                    <tbody>
+                                        <tr valign="center">
+                                            {{#if HasPreviousPage}}
+                                            <td width="50%" align="left" valign="middle">
+                                                <form name="searchForm" id="searchForm" method="GET" action="/site">
+                                                    <input type="hidden" name="url" value="https://www.youtube.com/results">
+                                                    <input type="hidden" name="p" value="{{PreviousPage}}">
+                                                    <input type="hidden" name="search_query" value="{{SearchString}}">
+                                                    <input type="submit" name="previous_page" value="Previous Page">
+                                                </form>
+                                            </td>
+                                            {{/if}}
+                                            <td width="50%" colspan="4" align="right" valign="middle">
+                                                <form name="searchForm" id="searchForm" method="GET" action="/site">
+                                                    <input type="hidden" name="url" value="https://www.youtube.com/results">
+                                                    <input type="hidden" name="p" value="{{NextPage}}">
+                                                    <input type="hidden" name="search_query" value="{{SearchString}}">
+                                                    <input type="submit" name="next_page" value="Next Page">
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        {{#Videos}}
+                                        <tr valign="top">
+                                            {{#this}}
+                                            <td width="20%">
+                                                <a href="/site?url=https://www.youtube.com/watch?v={{Id}}">
+                                                    <img src="/file?img={{Thumbnails.LowResUrl}}"
+                                                         width="120" height="90">
+                                                </a>
+                                                <font align="center" face="verdana, arial, helvetica" size="-1">
+                                                    <div>
+                                                        <a href="/site?url=https://www.youtube.com/watch?v={{Id}}">
+                                                            {{Title}}
+                                                        </a>
+                                                    </div>
+                                                </font>
+                                                <font face="verdana, arial, helvetica" size="-2">
+                                                    <div>
+                                                        Added: {{UploadDate}},
+                                                        <br> by <a href="/site?url=https://www.youtube.com/channel/{{ChannelId}}">{{Author}}</a>
+                                                    </div>
+                                                    <div>
+                                                        {{Engagement}}
+                                                    </div>
+                                                </font>
+                                            </td>
+                                            {{/this}}
+                                        </tr>
+                                        {{/Videos}}
+
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

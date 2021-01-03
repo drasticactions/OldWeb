@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>YouTube - Your Digital Video Repository</title>
+</head>
+<body>
+    <table align="center" width="640">
+        <tbody>
+            <tr>
+                <td>
+                    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                        <tbody>
+                            <tr valign="top">
+                                <td width="130" rowspan="2"><a href="/site?url=http://www.youtube.com"><img src="/assets/www.youtube.com/img/logo.gif" width="120" height="48" alt="YouTube" border="0"></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table align="center" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 10px;">
+                        <tbody>
+                            <tr>
+                                <form name="f" method="GET" action="/site">
+                                    <td width="300"><input size="38" tabindex="1" type="text" value="" name="search_query" maxlength="128"></td>
+                                    <td>
+                                        <input type="hidden" name="url" value="https://www.youtube.com/results">
+                                        <input type="submit" name="search_videos" value="Search Videos">
+                                    </td>
+                                </form>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table width="520" align="center" cellpadding="0" cellspacing="0" border="0">
+                        <tbody>
+                            <tr valign="top">
+                                <td width="320">
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <font face="verdana, arial, helvetica" size="-1">
+                                                        <h3>{{Video.Title}}</h3>
+                                                    </font>
+                                                    <object ID="MediaPlayer" height="310" width="320" CLASSID="CLSID:6BF52A52-394A-11d3-B153-00C04F79FAA6">
+                                                        <param name="URL" value="/file?name={{Video.Id}}&type=youtube&video={{VideoUrl}}">
+                                                        <param Name="autoStart" Value="true">
+                                                        <param Name="uiMode" Value="full">
+                                                    </object>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <font face="verdana, arial, helvetica" size="-1">
+                                                        <dl>
+                                                            <dt><b>Creator:</b> <a href="/site?url=https://www.youtube.com/channel/{{Video.ChannelId}}">{{Video.Author}}</a></dt>
+                                                            <dt><b>Duration:</b> {{Video.Duration}}</dt>
+                                                            <dt>
+                                                                <font face="verdana, arial, helvetica" size="-2">
+                                                                    {{Video.Engagement}}
+                                                                </font>
+                                                            </dt>
+                                                            <dt>
+                                                                <font face="verdana, arial, helvetica" size="-2">
+                                                                    <a href="/file?name={{Video.Id}}&type=youtube&video={{VideoUrl}}">Download Video</a>
+                                                                </font>
+                                                            </dt>
+                                                        </dl>
+                                                    </font>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <td width="200">
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <br />
+                                                    <br />
+                                                    <br />
+                                                    <p>
+                                                        <font face="verdana, arial, helvetica" size="2">
+                                                            {{Video.Description}}
+                                                        </font>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

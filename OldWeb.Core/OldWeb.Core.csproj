@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+   <Import Project="../Web.props" />
+
+   <ItemGroup>
+     <PackageReference Include="Handlebars.Net" Version="1.11.5" />
+     <PackageReference Include="System.ServiceModel.Syndication" Version="5.0.0" />
+     <PackageReference Include="YoutubeExplode" Version="5.1.9" />
+   </ItemGroup>
+
+   <ItemGroup>
+     <ProjectReference Include="..\OldWeb.Assets\OldWeb.Assets.csproj" />
+   </ItemGroup>
+
+</Project>
